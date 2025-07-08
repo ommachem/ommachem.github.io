@@ -1,85 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OMMACHEM</title>
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
     header {
+      display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
+      background-color: white;
       z-index: 1000;
     }
-
     .branding {
       display: flex;
       align-items: center;
     }
-
-    .branding_img {
-      height: 60px;
-      margin-right: 0;
+    .branding img {
+      height: 40px;
+      margin-right: 10px;
     }
-
     nav a {
       margin-left: 25px;
       text-decoration: none;
       color: #003366;
       font-weight: bold;
     }
-
-    .banner img {
-      width: 100%;
-      height: auto;
-    }
-
-    section {
-      padding: 40px;
-    }
-
-    h2 {
-      color: #003366;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .product-item {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 6px;
-    }
-
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 6px;
-      max-width: 600px;
-      margin-top: 20px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-    }
-
     .lang-switch button {
       margin-left: 10px;
       padding: 5px 10px;
@@ -89,9 +44,96 @@
       border-radius: 3px;
       cursor: pointer;
     }
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+    section {
+      padding: 40px;
+    }
+    h2 {
+      color: #003366;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 6px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
-  <!-- 网页主体 -->
+  <header>
+    <div class="branding">
+      <img src="logo.png" alt="OMMACHEM Logo" />
+      <strong>OMMACHEM</strong>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang-switch">
+      <button>EN</button>
+      <button>中</button>
+    </div>
+  </header>
+
+  <section class="banner">
+    <img src="banner.jpg" alt="Banner Image" />
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>OMMACHEM is a professional supplier of comprehensive textile auxiliaries, offering solutions from pre-treatment, dyeing, soaping to finishing. We are committed to delivering high-performance products and reliable service to our global clients.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="product-item">
+        <h3>Disperse Leveling Agent YDL</h3>
+        <p>Improves level dyeing effect during high temperature dyeing process.</p>
+      </div>
+      <div class="product-item">
+        <h3>Anti-yellowing Agent APY-P</h3>
+        <p>Prevents yellowing during high-temp setting, suitable for light-colored fabrics.</p>
+      </div>
+      <div class="product-item">
+        <h3>Soaping Agent AW-183</h3>
+        <p>Removes unfixed dyes effectively, enhancing color fastness.</p>
+      </div>
+      <div class="product-item">
+        <h3>High-temp Dispersant HDS-411</h3>
+        <p>Stable dispersing performance under high-temp dyeing conditions.</p>
+      </div>
+      <div class="product-item">
+        <h3>JinterEco WHN-148</h3>
+        <p>Eco-friendly multifunctional washing agent for polyester and blends.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>WhatsApp/WeChat: +8617316273559</p>
+    <p>Email: info@ommachi.com</p>
+    <p>Instagram: @ommachem</p>
+  </section>
+
+  <footer>
+    &copy; 2025 OMMACHEM. All rights reserved.
+  </footer>
 </body>
 </html>
