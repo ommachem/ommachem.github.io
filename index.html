@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OMMACHEM</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
@@ -17,54 +18,57 @@
     .search-box input { flex: 1; padding: 0.5rem; border: 1px solid #ccc; }
     .search-box button { padding: 0.5rem 1rem; background: #003b7e; color: white; border: none; }
     .lang { font-size: 0.9rem; }
+    .lang-toggle { cursor: pointer; }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>OMMACHEM</strong></div>
+    <div><strong><img src="logo.png" alt="OMMACHEM" style="height:30px; vertical-align: middle;"> OMMACHEM <small style="font-size: 0.8em;">The Chemical Solution Company</small></strong></div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-      <span class="lang"><a href="#">EN</a> | <a href="#">中文</a></span>
+      <a href="#about" class="tr" data-en="About" data-zh="关于我们">About</a>
+      <a href="#products" class="tr" data-en="Products" data-zh="产品中心">Products</a>
+      <a href="#contact" class="tr" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="lang"><span class="lang-toggle" onclick="toggleLanguage()">EN | 中文</span></span>
     </nav>
   </header>
 
   <div class="hero">
-    <h1>Your Trusted Textile Chemical Partner</h1>
-    <p>Environmentally responsible textile auxiliaries</p>
+    <h1 class="tr" data-en="Your Trusted Textile Chemical Partner" data-zh="值得信赖的纺织助剂合作伙伴">Your Trusted Textile Chemical Partner</h1>
+    <p class="tr" data-en="Environmentally responsible textile auxiliaries" data-zh="环境友好的纺织助剂解决方案">Environmentally responsible textile auxiliaries</p>
   </div>
 
   <section class="section" id="about">
-    <h2>About Us</h2>
-    <p>OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing.</p>
+    <h2 class="tr" data-en="About Us" data-zh="关于我们">About Us</h2>
+    <p class="tr" data-en="OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing."
+       data-zh="OMMACHEM 广州奥马驰贸易有限公司致力于为纺织前处理、染色和后整理提供可持续、可靠和高效的助剂解决方案。">
+      OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing.
+    </p>
   </section>
 
   <section class="section" id="products">
-    <h2>Our Products</h2>
+    <h2 class="tr" data-en="Our Products" data-zh="我们的产品">Our Products</h2>
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search products...">
       <button onclick="filterProducts()">Search</button>
     </div>
     <div class="product-grid" id="productGrid">
-      <div class="product-card">YDL Leveling Agent</div>
-      <div class="product-card">APY-P Anti-yellowing Agent</div>
-      <div class="product-card">AW-183 Soaping Agent</div>
-      <div class="product-card">HDS-411 HT Dispersing Agent</div>
-      <div class="product-card">WHN-148 Wet Rubbing Agent</div>
+      <div class="product-card"><strong>螯合分散剂</strong><br/>Sequestering Dispersant</div>
+      <div class="product-card"><strong>浸染润滑剂</strong><br/>Dye Bath Lubricant Agent</div>
+      <div class="product-card"><strong>精炼乳化剂</strong><br/>Scouring Agent</div>
+      <div class="product-card"><strong>还原清洗剂</strong><br/>Alkali Reduction Clearing Agent</div>
     </div>
   </section>
 
   <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@ommachi.com</p>
-    <p>Phone: +86-123-456-7890</p>
-    <p>Address: Guangzhou, China</p>
+    <h2 class="tr" data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
+    <p>Email: <a href="mailto:vera@ommachi.com">vera@ommachi.com</a></p>
+    <p>WeChat/WhatsApp: +8617316273559</p>
+    <p>Instagram: @ommachem (coming soon)</p>
   </section>
 
   <footer>
     <div>© 2025 OMMACHEM</div>
-    <div><a href="#" style="color:white; text-decoration:underline;">Back to top</a></div>
+    <div><a href="#" style="color:white; text-decoration:underline;" class="tr" data-en="Back to top" data-zh="返回顶部">Back to top</a></div>
   </footer>
 
   <script>
@@ -74,6 +78,15 @@
       products.forEach(p => {
         p.style.display = p.textContent.toLowerCase().includes(input) ? 'block' : 'none';
       });
+    }
+
+    function toggleLanguage() {
+      const elements = document.querySelectorAll('.tr');
+      elements.forEach(el => {
+        const isEn = document.documentElement.lang === 'en';
+        el.textContent = isEn ? el.dataset.zh : el.dataset.en;
+      });
+      document.documentElement.lang = document.documentElement.lang === 'en' ? 'zh' : 'en';
     }
   </script>
 </body>
