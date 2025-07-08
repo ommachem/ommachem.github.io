@@ -1,93 +1,176 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OMMACHEM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMMACHEM – The Chemical Solution Company</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #003b7e; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { margin: 0 1rem; color: white; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    .hero { background: url('banner.jpg') no-repeat center center/cover; color: white; padding: 5rem 2rem; text-align: center; }
-    .section { padding: 2rem; max-width: 1000px; margin: auto; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .product-card { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; text-align: center; }
-    .search-box { margin: 2rem auto; max-width: 600px; display: flex; }
-    .search-box input { flex: 1; padding: 0.5rem; border: 1px solid #ccc; }
-    .search-box button { padding: 0.5rem 1rem; background: #003b7e; color: white; border: none; }
-    .lang { font-size: 0.9rem; }
-    .lang-toggle { cursor: pointer; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fb;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+
+    .branding img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+
+    section {
+      padding: 40px;
+    }
+
+    h2 {
+      color: #003366;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .lang-switch button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong><img src="images/logo.png" alt="OMMACHEM" style="height:30px; vertical-align: middle" />
- OMMACHEM <small style="font-size: 0.8em;">The Chemical Solution Company</small></strong></div>
+    <div class="branding">
+      <img src="images/logo.png" alt="OMMACHEM Logo">
+      <h1>OMMACHEM</h1>
+    </div>
     <nav>
-      <a href="#about" class="tr" data-en="About" data-zh="关于我们">About</a>
-      <a href="#products" class="tr" data-en="Products" data-zh="产品中心">Products</a>
-      <a href="#contact" class="tr" data-en="Contact" data-zh="联系我们">Contact</a>
-      <span class="lang"><span class="lang-toggle" onclick="toggleLanguage()">EN | 中文</span></span>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中</button>
+    </div>
   </header>
 
-  <div class="hero">
-    <h1 class="tr" data-en="Your Trusted Textile Chemical Partner" data-zh="值得信赖的纺织助剂合作伙伴">Your Trusted Textile Chemical Partner</h1>
-    <p class="tr" data-en="Environmentally responsible textile auxiliaries" data-zh="环境友好的纺织助剂解决方案">Environmentally responsible textile auxiliaries</p>
-  </div>
-
-  <section class="section" id="about">
-    <h2 class="tr" data-en="About Us" data-zh="关于我们">About Us</h2>
-    <p class="tr" data-en="OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing."
-       data-zh="OMMACHEM 广州奥马驰贸易有限公司致力于为纺织前处理、染色和后整理提供可持续、可靠和高效的助剂解决方案。">
-      OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing.
-    </p>
+  <section class="banner">
+    <img src="images/banner.jpg" alt="OMMACHEM Banner">
   </section>
 
-  <section class="section" id="products">
-    <h2 class="tr" data-en="Our Products" data-zh="我们的产品">Our Products</h2>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search products...">
-      <button onclick="filterProducts()">Search</button>
-    </div>
-    <div class="product-grid" id="productGrid">
-      <div class="product-card"><strong>螯合分散剂</strong><br/>Sequestering Dispersant</div>
-      <div class="product-card"><strong>浸染润滑剂</strong><br/>Dye Bath Lubricant Agent</div>
-      <div class="product-card"><strong>精炼乳化剂</strong><br/>Scouring Agent</div>
-      <div class="product-card"><strong>还原清洗剂</strong><br/>Alkali Reduction Clearing Agent</div>
-    </div>
-  </section>
+  <main>
+    <section id="about">
+      <h2 data-en="About Us" data-zh="关于我们">About Us</h2>
+      <p data-en="OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing."
+         data-zh="OMMACHEM致力于为纺织前处理、染色和后整理提供可持续、可靠且高效的解决方案。">
+         OMMACHEM is committed to providing sustainable, reliable, and effective solutions for textile pretreatment, dyeing, and finishing.
+      </p>
+    </section>
 
-  <section class="section" id="contact">
-    <h2 class="tr" data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
-    <p>Email: <a href="mailto:vera@ommachi.com">vera@ommachi.com</a></p>
-    <p>WeChat/WhatsApp: +8617316273559</p>
-    <p>Instagram: @ommachem (coming soon)</p>
-  </section>
+    <section id="products">
+      <h2 data-en="Our Products" data-zh="我们的产品">Our Products</h2>
+      <div class="products">
+        <div class="product-item">
+          <h3>Dispersing Agent YDL</h3>
+          <p>Excellent levelling and dispersing performance during dyeing process.</p>
+        </div>
+        <div class="product-item">
+          <h3>Anti-yellowing Agent APY-P</h3>
+          <p>Prevents yellowing in high-temperature finishing.</p>
+        </div>
+        <div class="product-item">
+          <h3>Soaping Agent AW-183</h3>
+          <p>Effective in removing unfixed dye to improve colorfastness.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div>© 2025 OMMACHEM</div>
-    <div><a href="#" style="color:white; text-decoration:underline;" class="tr" data-en="Back to top" data-zh="返回顶部">Back to top</a></div>
-  </footer>
+    <section id="contact">
+      <h2 data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
+      <form>
+        <label data-en="Name" data-zh="姓名">Name</label>
+        <input type="text" name="name">
+
+        <label data-en="Email" data-zh="邮箱">Email</label>
+        <input type="email" name="email">
+
+        <label data-en="Message" data-zh="留言">Message</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit" style="background:#003366; color:white; padding:10px 20px; border:none; border-radius:4px; cursor:pointer;">Submit</button>
+      </form>
+    </section>
+  </main>
 
   <script>
-    function filterProducts() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const products = document.querySelectorAll('.product-card');
-      products.forEach(p => {
-        p.style.display = p.textContent.toLowerCase().includes(input) ? 'block' : 'none';
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
       });
-    }
-
-    function toggleLanguage() {
-      const elements = document.querySelectorAll('.tr');
-      elements.forEach(el => {
-        const isEn = document.documentElement.lang === 'en';
-        el.textContent = isEn ? el.dataset.zh : el.dataset.en;
-      });
-      document.documentElement.lang = document.documentElement.lang === 'en' ? 'zh' : 'en';
     }
   </script>
 </body>
