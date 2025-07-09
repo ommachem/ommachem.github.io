@@ -12,7 +12,7 @@
       position: sticky; top: 0; background-color: white; z-index: 1000;
     }
     .branding { display: flex; align-items: center; }
-    .branding img { height: 60px; margin-right: 10px; }
+    .branding img { height: 70px; margin-right: 10px; }
     nav a {
       margin-left: 25px; text-decoration: none; color: #003366;
       font-weight: bold;
@@ -28,7 +28,7 @@
     h2 { color: #003366; }
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
     .product-item {
-      background: #fff; border: 1px solid #ddd;
+      background: #f9f9f9; border: 1px solid #4CAF50;
       padding: 20px; border-radius: 6px;
     }
     #searchBar {
@@ -39,6 +39,28 @@
       background-color: #003366; color: white;
       text-align: center; padding: 20px;
     }
+    @media (max-width: 768px) {
+      .branding img {
+        height: 50px;
+      }
+
+      header {
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin-left: 15px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .product-item {
+        padding: 15px;
+      }
   </style>
 </head>
 <body>
@@ -74,25 +96,30 @@
     <h2 data-en="Our Products" data-zh="我们的产品">Our Products</h2>
     <input type="text" id="searchBar" placeholder="Search products..." onkeyup="filterProducts()" />
     <div class="products" id="productList">
-      <div class="product-item" data-title="Disperse Leveling Agent YDL" data-desc="Improves level dyeing effect...">
-        <h3>Disperse Leveling Agent YDL</h3>
-        <p>Improves level dyeing effect during high temperature dyeing process.</p>
+      <div class="product-item" data-title="Sequestering Dispersant" data-desc="Binds metal ions and improves dye stability.">
+        <h3>OMC-PT01</h3>
+        <p><strong>Name:</strong>Sequestering Dispersant</p>
+        <p><strong>Function:</strong>Binds metal ions and improves dye stability.</p>
       </div>
-      <div class="product-item" data-title="Anti-yellowing Agent APY-P" data-desc="Prevents yellowing...">
-        <h3>Anti-yellowing Agent APY-P</h3>
-        <p>Prevents yellowing during high-temp setting, suitable for light-colored fabrics.</p>
+      <div class="product-item" data-title="Dye Bath Lubricant Agent" data-desc="Improves dye levelness and fiber lubrication.">
+        <h3>OMC-DY01</h3>
+        <p><strong>Name:</strong>Dye Bath Lubricant Agent </p>
+        <p><strong>Function:</strong>Improves dye levelness and fiber lubrication.</p>
       </div>
-      <div class="product-item" data-title="Soaping Agent AW-183" data-desc="Removes unfixed dyes...">
-        <h3>Soaping Agent AW-183</h3>
-        <p>Removes unfixed dyes effectively, enhancing color fastness.</p>
+      <div class="product-item" data-title="Scouring Agent" data-desc="Removes oil, wax and impurities in pre-treatment stage.">
+        <h3>OMC-PT02</h3>
+        <p><strong>Name:</strong> Scouring Agent</p>
+        <p><strong>Function:</strong> Removes oil, wax and impurities in pre-treatment stage.</p>
       </div>
-      <div class="product-item" data-title="High-temp Dispersant HDS-411" data-desc="Stable dispersing...">
-        <h3>High-temp Dispersant HDS-411</h3>
-        <p>Stable dispersing performance under high-temp dyeing conditions.</p>
+      <div class="product-item" data-title="Alkali Reduction Clearing Agent" data-desc="Removes surface disperse dye from polyester; enhances fastness.">
+        <h3>OMC-PW01 </h3>
+        <p><strong>Name:</strong> Alkali Reduction Clearing Agent</p>
+        <p><strong>Function:</strong> Removes surface disperse dye from polyester; enhances fastness.</p>
       </div>
-      <div class="product-item" data-title="JinterEco WHN-148" data-desc="Eco-friendly...">
-        <h3>JinterEco WHN-148</h3>
-        <p>Eco-friendly multifunctional washing agent for polyester and blends.</p>
+      <div class="product-item" data-title="Soaping Agent" data-desc="Improves wet fastness by removing unfixed dyes after dyeing.">
+        <h3>OMC-PW02</h3>
+        <p><strong>Name:</strong> Soaping Agent</p>
+        <p><strong>Function:</strong> Improves wet fastness by removing unfixed dyes after dyeing.</p>
       </div>
     </div>
   </section>
@@ -100,7 +127,7 @@
   <section id="contact">
     <h2 data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
     <p><strong>WhatsApp/WeChat:</strong> +8617316273559</p>
-    <p><strong>Email:</strong> info@ommachi.com</p>
+    <p><strong>Email:</strong> vera@ommachi.com</p>
     <p><strong>Instagram:</strong> @ommachem</p>
   </section>
 
